@@ -2,6 +2,7 @@
 Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
+- created MonoJust class: demonstrates Mono.just()
 - LazyStream class: demonstrates lazy evaluation of streams
 - created demo to simulate pub/sub
 - defined request/cancel logic in SubscriptionImpl
