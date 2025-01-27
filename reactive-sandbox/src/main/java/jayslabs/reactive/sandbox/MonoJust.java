@@ -5,8 +5,8 @@ import reactor.core.publisher.Mono;
 
 public class MonoJust {
     public static void main(String[] args) {
-        //monoDemo1();
-        monoDemo2();
+        monoDemo1();
+        //monoDemo2();
     }
 
     public static void monoDemo1() {
