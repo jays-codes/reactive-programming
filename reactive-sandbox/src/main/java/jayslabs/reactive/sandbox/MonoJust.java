@@ -25,5 +25,9 @@ public class MonoJust {
         Mono.just("This is MONO!!!")
         .subscribe(str -> System.out.println("Received: " + str + "; size:" 
         +str.length()));
+
+        Mono.just(12)
+        .subscribe(num -> System.out.println("Received: " + num));
     }
+
 }
