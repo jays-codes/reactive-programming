@@ -2,7 +2,7 @@
 Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
-- created common package: DefaultSubscriber<T>, Util; 
+- created common package, and classes: DefaultSubscriber<T>, Util: class to create subscribers with names; 
 - created MonoSubscribe class: demonstrates Mono.subscribe(); implemented diff method signatures of subscribe() to handle base consumer, error, complete, and subscription
 - multi type mono demo
 - created MonoJust class: demonstrates Mono.just(); subscribe()

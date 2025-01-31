@@ -4,6 +4,7 @@ import org.reactivestreams.Subscriber;
 
 import reactor.core.publisher.Mono;
 
+// utility class for creating subscribers with names
 public class Util {
     public static <T> Subscriber<T> subscriber() {
         return new DefaultSubscriber<>("");
