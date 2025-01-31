@@ -2,6 +2,7 @@
 Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
+- created MonoFromSupplier class: demonstrates Mono.fromSupplier(); subscribe(); used for lazy execution
 - created MonoEmptyError.getUserName().subscribe() call that takes in a consumer instead of subscriber to demo error handling
 - created MonoEmptyEror class to demo publisher that doesn't pass data and simulating error
 - created common package, and classes: DefaultSubscriber<T>, Util: class to create subscribers with names; 
