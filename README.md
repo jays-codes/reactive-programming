@@ -2,6 +2,7 @@
 Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
+- created MonoEmptyError.getUserName().subscribe() call that takes in a consumer instead of subscriber to demo error handling
 - created MonoEmptyEror class to demo publisher that doesn't pass data and simulating error
 - created common package, and classes: DefaultSubscriber<T>, Util: class to create subscribers with names; 
 - created MonoSubscribe class: demonstrates Mono.subscribe(); implemented diff method signatures of subscribe() to handle base consumer, error, complete, and subscription
