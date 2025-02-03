@@ -10,7 +10,8 @@ public abstract class AbstractHttpClient {
     public AbstractHttpClient(){
 
         var loopResources = LoopResources.create("jayslabs", 1, true);
-        this.httpClient = HttpClient.create().runOn(loopResources).baseUrl(BASE_URL);
+        this.httpClient = HttpClient.create()
+            .runOn(loopResources).baseUrl(BASE_URL);
 
     }    
 }
