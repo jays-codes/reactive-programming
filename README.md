@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- created AbstractHttpClient - template for reactive http client: HttpClient, LoopResources; created ExternalServiceClient using AbstractHttpClient, getProductName() that return a Mono<String>
 - create dockerfile to use vinoth's external-services service; created image and ran container (7070)
 - created MonoDefer, createPublisher(), demoed Mono.defer()
 - created MonoFromFuture class: demo Mono.fromFuture(); used method reference to enable lazy exec; CompletableFuture, supplyAsync()
