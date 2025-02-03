@@ -2,6 +2,8 @@
 Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
+
+- created MonoFromRunnable class: demonstrates Mono.fromRunnable(); integrate side-effecting code (logging, notification, status update) in a reactive pipeline; used Faker
 - created MonoFromCallable class: demonstrates Mono.fromCallable(); integrate blocking calls in a reactive pipeline
 - created MonoFromSupplier class: demonstrates Mono.fromSupplier(); subscribe(); used for lazy execution
 - created MonoEmptyError.getUserName().subscribe() call that takes in a consumer instead of subscriber to demo error handling
