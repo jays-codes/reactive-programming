@@ -1,5 +1,7 @@
 package jayslabs.reactive.sandbox.common;
 
+import java.time.Duration;
+
 import org.reactivestreams.Subscriber;
 
 import com.github.javafaker.Faker;
@@ -22,6 +24,15 @@ public class Util {
 
     public static Faker faker(){
         return faker;
+    }
+
+
+    public static void sleepSeconds(int seconds){
+        try {
+            Thread.sleep(Duration.ofSeconds(seconds));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
