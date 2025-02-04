@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- created FluxMultipleSubscribers class: multiple subscribers,filter(), map()
 - created FluxJust class: Flux, just(); subscribe()
 - created FileServiceImpl to apply reactive principles to a non-reactive code base; FileServiceImpl2 is a refactored version of FileServiceImpl
 - tested block() for synchronous execution
