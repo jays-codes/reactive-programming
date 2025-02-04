@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- created FluxRange: range(), map(); Faker to generate names data
 - created FluxFromStream: fromStream(), passed stream supplier (list::stream)
 - created FluxFromIterableOrArray: fromIterable(), fromArray()
 - created FluxMultipleSubscribers class: multiple subscribers,filter(), map()
