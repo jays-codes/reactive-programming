@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- create FluxVsList, NameGenerator: demo processing difference bet List and Flux
 - created FluxLog: log()
 - created FluxRange: range(), map(); Faker to generate names data
 - created FluxFromStream: fromStream(), passed stream supplier (list::stream)
