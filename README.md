@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- created NonBlockingStreamingMessages: demonstrates non-blocking streaming messages; Create getNames():Flux<String> - used external service API to get names; uses AbstractHttpClient for non blocking IO
 - create FluxVsList, NameGenerator: demo processing difference bet List and Flux
 - created FluxLog: log()
 - created FluxRange: range(), map(); Faker to generate names data

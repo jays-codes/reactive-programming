@@ -19,7 +19,8 @@ public class NonBlockingIO {
         // .subscribe(Util.subscriber());
 
         for (int i=1;i<=10;i++){
-            client.getProductName(i).block();
+            client.getProductName(i);
+            //.block();
             log.info("Completed: " + i);
             //.subscribe(Util.subscriber());
         }
