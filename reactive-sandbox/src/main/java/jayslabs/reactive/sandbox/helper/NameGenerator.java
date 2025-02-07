@@ -1,15 +1,29 @@
 package jayslabs.reactive.sandbox.helper;
 
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.IntStream;
 
 import jayslabs.reactive.sandbox.common.Util;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.FluxSink;
 
-public class NameGenerator {
 
+public class NameGenerator implements Consumer<FluxSink<String>>{
+
+    private FluxSink<String> fluxSink;
+
+    @Override
+    public void accept(FluxSink<String> fluxSink) {
+        this.fluxSink = fluxSink;
+    }
+
+    public void generateQuickName(){
+        this.fluxSink.next(Util.faker().name().firstName());
+    }
 
     public static final List<String> generateNamesList(int count){
+
         return IntStream.rangeClosed(0, count)
             .mapToObj(i -> generateName())
             .toList();
