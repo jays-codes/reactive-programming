@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Completed Assignment54: read from stock trading service, and buy/sell stock based on price changes; print profit/loss; create Assignment54, StockSubscriberImpl, ExternalServiceClient.getStockPrice()
 - created FluxMonoConversion: demonstrates conversion from Mono to Flux: Mono.from(), Flux.from()
 - created FluxEmptyError: empty(), error(), defer()
 - created FluxInterval: interval()

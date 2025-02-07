@@ -22,6 +22,14 @@ public class Util {
         return new DefaultSubscriber<>(name);
     }
 
+    // public static <T> Subscriber<T> stockSubscriber(String name, Integer initBalance){
+    //     return new DefaultSubscriber<T>(name){
+    //         private Integer balance = 1000;
+            
+            
+    //     };
+    // }
+
     public static Faker faker(){
         return faker;
     }
