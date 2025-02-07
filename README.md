@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- created FluxMonoConversion: demonstrates conversion from Mono to Flux: Mono.from(), Flux.from()
 - created FluxEmptyError: empty(), error(), defer()
 - created FluxInterval: interval()
 - created NonBlockingStreamingMessages: demonstrates non-blocking streaming messages; Create getNames():Flux<String> - used external service API to get names; uses AbstractHttpClient for non blocking IO
