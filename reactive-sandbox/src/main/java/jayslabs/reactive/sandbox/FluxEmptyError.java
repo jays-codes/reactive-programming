@@ -17,5 +17,10 @@ public class FluxEmptyError {
         Flux.error(new RuntimeException("Exception"))
         .subscribe(Util.subscriber());
 
+
+        Flux.defer(()->{
+            return Flux.just(Util.faker().name().fullName(), 
+            Util.faker().name().fullName());
+        }).subscribe(Util.subscriber());
     }
 }
