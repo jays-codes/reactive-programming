@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- updated comments on FluxSinkThreadSafety
 - created FluxSinkThreadSafety: demonstrates a thread-safe way to handle multiple producers using FluxSink; used multiple threads to generate names, the "adding to list" logic is via subscribe(list::add)
 - created factory to generate Name using Consumer<FluxSink<String>>; refactored FluxCreate to use factory
 - created FluxCreate: .create(), emitted items programatically via fluxsink.next()

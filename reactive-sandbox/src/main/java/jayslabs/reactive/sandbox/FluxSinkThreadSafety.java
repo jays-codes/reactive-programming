@@ -46,11 +46,16 @@ public class FluxSinkThreadSafety {
     private static void demo2(){
         var list = new ArrayList<String>();
         var generator = new NameGenerator();
-        Flux.create(generator).subscribe(list::add);
+        //creates a Flux using the NameGenerator as the source
+        Flux.create(generator)
+        //adds each emitted item to the list. No items are emitted yet 
+        .subscribe(list::add);
      
+
         Runnable runnable = () -> {
 
             for (int i = 0; i < 1000; i++) {
+                //this will emit items to the Flux
                 generator.generateQuickName();
             }
         };
