@@ -18,6 +18,7 @@ public class NameGenerator implements Consumer<FluxSink<String>>{
         this.fluxSink = fluxSink;
     }
 
+    //create items to emit via fluxSink.next()
     public void generateQuickName(){
         this.fluxSink.next(Util.faker().name().firstName());
     }

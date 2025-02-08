@@ -3,6 +3,8 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- created FluxSinkThreadSafety: demonstrates a thread-safe way to handle multiple producers using FluxSink; used multiple threads to generate names, the "adding to list" logic is via subscribe(list::add)
+- created factory to generate Name using Consumer<FluxSink<String>>; refactored FluxCreate to use factory
 - created FluxCreate: .create(), emitted items programatically via fluxsink.next()
 - Completed Assignment54: read from stock trading service, and buy/sell stock based on price changes; print profit/loss; create Assignment54, StockSubscriberImpl, ExternalServiceClient.getStockPrice()
 - created FluxMonoConversion: demonstrates conversion from Mono to Flux: Mono.from(), Flux.from()
