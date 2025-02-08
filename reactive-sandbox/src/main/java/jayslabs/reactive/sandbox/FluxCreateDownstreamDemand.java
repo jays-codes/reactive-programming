@@ -13,7 +13,32 @@ public class FluxCreateDownstreamDemand {
     private static final Logger log = LoggerFactory.getLogger(FluxCreateDownstreamDemand.class);
 
     public static void main(String[] args) {
+        emitOnDemand();
 
+    }
+
+    private static void emitOnDemand(){
+        var subscriber = new SubscriberImpl();
+
+        Flux.<String>create(fluxsink -> {
+            fluxsink.onRequest(request -> {
+                for (int i = 0; i < request && !fluxsink.isCancelled(); i++) {
+                    var name = Util.faker().name().firstName();
+                    log.info("generated: {}", name);
+                    fluxsink.next(name);
+                }
+            });
+            
+        }).subscribe(subscriber);
+
+        //Util.sleepSeconds(2);
+        subscriber.getSubscription().request(2);
+
+        //Util.sleepSeconds(2);
+        subscriber.getSubscription().request(3);
+    }
+
+    private static void emitEarly(){
         var subscriber = new SubscriberImpl();
 
         Flux.<String>create(fluxsink -> {
@@ -30,6 +55,5 @@ public class FluxCreateDownstreamDemand {
 
         Util.sleepSeconds(2);
         subscriber.getSubscription().request(3);
-
     }
 }

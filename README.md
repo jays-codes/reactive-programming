@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- modified FluxCreateDownstreamDemand: added emitOnDemand(), used fluxsink.onRequest() to handle generation and emit of items base on demand (call to request)
 - created FluxCreateDownstreamDemand: demos items being eagerly generated on Flux.create(); downstream demand (time of emission) is handled via fluxsink.request()
 - updated comments on FluxSinkThreadSafety
 - created FluxSinkThreadSafety: demonstrates a thread-safe way to handle multiple producers using FluxSink; used multiple threads to generate names, the "adding to list" logic is via subscribe(list::add)
