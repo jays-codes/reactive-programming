@@ -16,7 +16,7 @@ public class TakeOperator {
     public static void main(String[] args) {
         //streamLimit();
         //fluxTake();
-        fluxTakeWhile();
+        //fluxTakeWhile();
         fluxTakeUntil();
     }
 
@@ -46,10 +46,10 @@ public class TakeOperator {
 
     private static void fluxTakeUntil(){
         Flux.range(1, 10)
-        .log("takeUntil")
+        //.log("takeUntil")
         .takeUntil(i -> i == 5)
-        .log("subscriber")
-        .subscribe(Util.subscriber());
+        //.log("subscriber")
+        .subscribe(System.out::println);
 
     }
 
