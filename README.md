@@ -3,6 +3,8 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Completed Assignment68: implement FileReaderService interface: FileReaderServiceImpl, used Flux.generate(stateSupplier, generator, stateConsumer); set BufferedReader as state. Wrote subscriber code with downstream demand handling.
+- refactored previous assignments
 - created FluxGenerateWithState: generate(), defined a lambda for SyncronousSink and state; defined state inside generate()
 - created FluxGenerate: generate(), defined a lambda for SyncronousSink; fluxCreate2Generate()
 - created TakeOperator:  take(), takeWhile(), takeUntil()
