@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- created FluxGenerateWithState: generate(), defined a lambda for SyncronousSink and state; defined state inside generate()
 - created FluxGenerate: generate(), defined a lambda for SyncronousSink; fluxCreate2Generate()
 - created TakeOperator:  take(), takeWhile(), takeUntil()
 - modified FluxCreateDownstreamDemand: added emitOnDemand(), used fluxsink.onRequest() to handle generation and emit of items base on demand (call to request)
