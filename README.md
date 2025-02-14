@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- SubscribeTest78, ErrorHandling: onErrorReturn(), onErrorResume() - using custom fallback(Function) method
 - OperatorDelay class; delayElements()
 - created HooksAndCallbacks: doOnSubscribe(), doOnRequest(), doOnNext(), doOnError(), doOnComplete(), doOnTerminate(), doOnCancel(), doOnDiscard(), doFinally(); separate doDiscard() 
 - created Assignment73: emit till 'Canada' problem using handle()
