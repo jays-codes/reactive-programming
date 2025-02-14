@@ -11,8 +11,10 @@ public class ErrorHandling {
     private static final Logger log = LoggerFactory.getLogger(ErrorHandling.class);
 
     public static void main(String[] args) {
-        callOnErrorReturn();
-        callFallback();
+        //callOnErrorReturn();
+        //callFallback();
+        //callOnErrorComplete();
+        callSkipErrorAndContinue();
     }
 
     public static void callOnErrorReturn() {
@@ -27,6 +29,22 @@ public class ErrorHandling {
         Flux.range(1, 10)
         .map(i -> i==5 ? 5/0 : i)
         .onErrorResume(ArithmeticException.class, e -> fallback())
+        .subscribe(Util.subscriber());
+    }
+
+    //onErrorComplete()
+    public static void callOnErrorComplete() {
+        Flux.range(1, 10)
+        .map(i -> i==5 ? 5/0 : i)
+        .onErrorComplete()
+        .subscribe(Util.subscriber());
+    }
+
+    //skipErrorandContinue()
+    public static void callSkipErrorAndContinue() {
+        Flux.range(1, 10)
+        .map(i -> i==5 ? 5/0 : i)
+        .onErrorContinue((e, o) -> log.error("error: {} and object: {}", e, o))
         .subscribe(Util.subscriber());
     }
 
