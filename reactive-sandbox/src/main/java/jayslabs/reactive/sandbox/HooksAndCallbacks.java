@@ -30,10 +30,11 @@ public class HooksAndCallbacks {
         Flux.<Integer>create(fluxSink -> {
             log.info("producer begins");
             for (int i = 0; i < 4; i++) {
+
                 fluxSink.next(i);
             }
             fluxSink.complete();
-           // fluxSink.error(new RuntimeException("oops"));
+           //fluxSink.error(new RuntimeException("oops"));
             log.info("producer ends");
         })
         .doOnComplete(() -> log.info("doOnComplete-1"))
@@ -46,7 +47,7 @@ public class HooksAndCallbacks {
         .doOnCancel(() -> log.info("doOnCancel-1"))
         .doOnDiscard(Object.class, o -> log.info("doOnDiscard-1: {}", o))
         .doFinally(signal -> log.info("doFinally-1: {}", signal)) // finally irrespective of the reason
-       // .take(2)
+        .take(2)
         .doOnComplete(() -> log.info("doOnComplete-2"))
         .doFirst(() -> log.info("doFirst-2"))
         .doOnNext(item -> log.info("doOnNext-2: {}", item))
@@ -57,7 +58,7 @@ public class HooksAndCallbacks {
         .doOnCancel(() -> log.info("doOnCancel-2"))
         .doOnDiscard(Object.class, o -> log.info("doOnDiscard-2: {}", o))
         .doFinally(signal -> log.info("doFinally-2: {}", signal)) // finally irrespective of the reason
-        //.take(4)
+        .take(4)
         .subscribe(Util.subscriber("subscriber"));
     }
 }
