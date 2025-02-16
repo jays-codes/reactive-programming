@@ -3,8 +3,8 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
-- SwitchIfEmpty: switchIfEmpty()
-- DefaultIfEmpty: defaultIfEmpty()
+- SwitchIfEmpty: switchIfEmpty(Publisher)
+- DefaultIfEmpty: defaultIfEmpty(T)
 - SubscribeTest78, ErrorHandling: onErrorReturn(), onErrorResume() - using custom fallback(Function) method; added onErrorComplete() and onErrorContinue(BiConsumer)
 - OperatorDelay class; delayElements()
 - created HooksAndCallbacks: doOnSubscribe(), doOnRequest(), doOnNext(), doOnError(), doOnComplete(), doOnTerminate(), doOnCancel(), doOnDiscard(), doFinally(); separate doDiscard() 

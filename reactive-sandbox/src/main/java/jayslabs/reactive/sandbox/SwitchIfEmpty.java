@@ -13,7 +13,7 @@ public class SwitchIfEmpty {
         Flux.just(1, 2, 3, 4, 5)
         .filter(i -> i>9)
         .switchIfEmpty(getFallback())
-        .defaultIfEmpty(-100)
+            .defaultIfEmpty(getFallback2())
         .subscribe(Util.subscriber());
     }
 
@@ -21,6 +21,10 @@ public class SwitchIfEmpty {
         log.info("getFallback");
         return Flux.range(100, 3).filter(p -> p>105);
     }
-    
+
+    public static Integer getFallback2() {
+        log.info("getFallback2");
+        return -100;
+    }
     
 }
