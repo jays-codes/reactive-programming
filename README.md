@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Timeout: timeout(Duration)
 - SwitchIfEmpty: switchIfEmpty(Publisher)
 - DefaultIfEmpty: defaultIfEmpty(T)
 - SubscribeTest78, ErrorHandling: onErrorReturn(), onErrorResume() - using custom fallback(Function) method; added onErrorComplete() and onErrorContinue(BiConsumer)
