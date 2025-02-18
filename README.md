@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Assignment88: modified ExternalServiceClient.getProductNameVer3() to handle timeout and empty fallback by calling different external service endpoints; used switchIfEmpty() and timeout()
 - OperatorTransform: created custom reuseable generic operator to encapsulate common logic for adding debug logging to a flux, call method conditionally inside transform(), used identity function
 - Timeout: timeout(Duration), timeout(Duration, Publisher)
 - SwitchIfEmpty: switchIfEmpty(Publisher)
