@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorTransform: created custom reuseable generic operator to encapsulate common logic for adding debug logging to a flux, call method conditionally inside transform(), used identity function
 - Timeout: timeout(Duration), timeout(Duration, Publisher)
 - SwitchIfEmpty: switchIfEmpty(Publisher)
 - DefaultIfEmpty: defaultIfEmpty(T)
