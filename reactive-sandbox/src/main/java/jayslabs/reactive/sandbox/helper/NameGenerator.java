@@ -4,17 +4,20 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.IntStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import jayslabs.reactive.sandbox.common.Util;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.FluxSink;
 
-
 public class NameGenerator implements Consumer<FluxSink<String>>{
 
     private FluxSink<String> fluxSink;
-
+    private static final Logger log = LoggerFactory.getLogger(NameGenerator.class);
     @Override
     public void accept(FluxSink<String> fluxSink) {
+        log.info("accept() method called");
         this.fluxSink = fluxSink;
     }
 
