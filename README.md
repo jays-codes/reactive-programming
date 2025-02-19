@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- HotPublisherCache: replay(), used stockStream() to generate stock prices; used stockFlux to emit stock prices to multiple subscribers
 - HotPublisherAutoConnect: autoConnect(2)
 - HotPublisher: refCount()
 - HotPublisher: demonstrates hot publisher, and multiple subscribers; used movieStream() to generate movie scenes; used share() to create a hot publisher
