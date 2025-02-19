@@ -22,14 +22,18 @@ public class ColdPublisher {
     private static void multiSubscribeNameGenerator(){
 
 
-        var generator = new NameGenerator();
+        var generator = new NameGenerator();    
+        //var generator2 = new NameGenerator();
         var flux = Flux.create(generator);
+        //var flux2 = Flux.create(generator2);
 
         flux.subscribe(Util.subscriber("anya"));
         flux.subscribe(Util.subscriber("becky"));
+        //flux2.subscribe(Util.subscriber("becky"));
 
         for (int i = 0; i < 3; i++) {
             generator.generateQuickName();
+            //generator2.generateQuickName();
         }
     }
 
