@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- HotPublisher: refCount()
 - HotPublisher: demonstrates hot publisher, and multiple subscribers; used movieStream() to generate movie scenes; used share() to create a hot publisher
 - ColdPublisher: demonstrates cold publisher, and multiple subscribers; used NameGenerator to generate names, demo flux sink issue not being able to support multi subscribers
 - Assignment88: modified ExternalServiceClient.getProductNameVer3() to handle timeout and empty fallback by calling different external service endpoints; used switchIfEmpty() and timeout()

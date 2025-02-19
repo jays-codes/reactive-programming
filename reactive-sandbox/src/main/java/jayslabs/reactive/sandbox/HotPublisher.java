@@ -12,7 +12,8 @@ public class HotPublisher {
     private static final Logger log = LoggerFactory.getLogger(HotPublisher.class);
 
     public static void main(String[] args) {
-        var movieFlux = movieStream().share();
+        //var movieFlux = movieStream().share();
+        var movieFlux = movieStream().publish().refCount(2);
 
         Util.sleepSeconds(2);
         movieFlux
