@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- HotPublisherAutoConnect: autoConnect(2)
 - HotPublisher: refCount()
 - HotPublisher: demonstrates hot publisher, and multiple subscribers; used movieStream() to generate movie scenes; used share() to create a hot publisher
 - ColdPublisher: demonstrates cold publisher, and multiple subscribers; used NameGenerator to generate names, demo flux sink issue not being able to support multi subscribers
