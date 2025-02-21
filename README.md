@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- FluxCreateMultipleSubscribers: share() to create a hot publisher, enabling multiple subscribers to subscribe to a flux created via Flux.create(), passing in a Consumer<FluxSink<String>> (NameGenerator)
 - HotPublisherCache: replay(), used stockStream() to generate stock prices; used stockFlux to emit stock prices to multiple subscribers
 - HotPublisherAutoConnect: autoConnect(2)
 - HotPublisher: refCount()
