@@ -31,6 +31,13 @@ public class ExternalServiceClient extends AbstractHttpClient {
             .map(Integer::parseInt);
     }
 
+    public Flux<String> getOrdersStream(){
+        return this.httpClient.get()
+            .uri("/demo04/orders/stream")
+            .responseContent()
+            .asString();
+    }
+
     //return Mono<String> of productName passing in productId
     public Mono<String> getProductNameVer2(int productId){
         return this.httpClient.get()

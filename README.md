@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Assignment99: iteration 1 - Modified ExternalServiceClient: getOrderStream():Flux<String> to retrieve from orders endpoint; Created RevenueService and InventoryService to compute revenue and inventory; used Flux.create() to create revenue and inventory fluxes; used multiple subscribers to subscribe to the fluxes; used share() to create a hot publisher; used replay() to replay the flux to new subscribers
 - FluxCreateMultipleSubscribers: share() to create a hot publisher, enabling multiple subscribers to subscribe to a flux created via Flux.create(), passing in a Consumer<FluxSink<String>> (NameGenerator)
 - HotPublisherCache: replay(), used stockStream() to generate stock prices; used stockFlux to emit stock prices to multiple subscribers
 - HotPublisherAutoConnect: autoConnect(2)
