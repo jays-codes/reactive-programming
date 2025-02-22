@@ -1,14 +1,18 @@
 package jayslabs.reactive.sandbox.client;
 
 import java.time.Duration;
+import java.util.Objects;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import jayslabs.reactive.sandbox.assignment.Order;
 import jayslabs.reactive.sandbox.common.AbstractHttpClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-
 public class ExternalServiceClient extends AbstractHttpClient {
-
+    private static final Logger log = LoggerFactory.getLogger(ExternalServiceClient.class);
     public Mono<String> getProductName(int productId){
         return this.httpClient.get()
 
@@ -31,11 +35,36 @@ public class ExternalServiceClient extends AbstractHttpClient {
             .map(Integer::parseInt);
     }
 
-    public Flux<String> getOrdersStream(){
+    private Flux<Order> orderFlux;
+
+    public Flux<Order> orderStream(){
+        if(Objects.isNull(orderFlux)){
+            this.orderFlux = getOrderStream();
+        }
+        return this.orderFlux;
+    }
+
+    private Flux<Order> getOrderStream() {
         return this.httpClient.get()
-            .uri("/demo04/orders/stream")
-            .responseContent()
-            .asString();
+                              .uri("/demo04/orders/stream")
+                              .responseContent()
+                              .asString()
+                              .map(this::parse)
+                              .doOnNext(o -> log.info("{}", o))
+                              .publish()
+                              .refCount(2);
+    }
+
+    /*
+        Feel free to make it more robust. This is just a demo
+    */
+    private Order parse(String message) {
+        var arr = message.split(":");
+        return new Order(
+                arr[1],
+                Integer.parseInt(arr[2]),
+                Integer.parseInt(arr[3])
+        );
     }
 
     //return Mono<String> of productName passing in productId
