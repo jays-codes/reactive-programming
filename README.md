@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorStartWith: startWith(Publisher), startWith(T)
 - Assignment99ver2: iteration 2; modified ExternalServiceClient added singleton factory method to return Flux<Order> (Hot Publisher via publish().refCount()); Created OrderProcessor interface, Order record, Impls of OrderProcessor: RevenueService, InventoryService with map var, order processing (consume()) and emit (stream() - Cold Publisher) logic; cleaned up previous version and remove internal classes causing clashing dependencies
 - Assignment99: iteration 1 - Modified ExternalServiceClient: getOrderStream():Flux<String> to retrieve from orders endpoint; Created RevenueService and InventoryService to compute revenue and inventory; used Flux.create() to create revenue and inventory fluxes; used multiple subscribers to subscribe to the fluxes; used share() to create a hot publisher; used replay() to replay the flux to new subscribers
 - FluxCreateMultipleSubscribers: share() to create a hot publisher, enabling multiple subscribers to subscribe to a flux created via Flux.create(), passing in a Consumer<FluxSink<String>> (NameGenerator)
