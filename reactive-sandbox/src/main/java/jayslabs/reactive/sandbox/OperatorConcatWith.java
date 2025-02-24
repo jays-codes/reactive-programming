@@ -14,9 +14,17 @@ public class OperatorConcatWith {
     public static void main(String[] args) {
         //demo1();
         //demo2();
-        demo3();
+        //demo3();
+        concatWithError();
     }
 
+    //demo concatDelayError() and error handling
+    public static void concatWithError(){
+        Flux.concatDelayError(producer1(), producer2())
+        .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(10);
+    }
 
     public static void demo3(){
         var flux1 = producer1();

@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorConcatWith: concatDelayError()
 - OperatorConcatWith; used concatWith(), concat()
 - OperatorStartWith: added nameGeneratorWithCacheDemo() and modified NameGenrator to add method returning cache-enabled publisher to show publisher caching with startWith()
 - OperatorStartWith: startWith(Publisher), startWith(T)
