@@ -19,3 +19,4 @@ public class Priceline {
         .take(Duration.ofSeconds(3));
     }
 }
+

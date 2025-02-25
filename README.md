@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorZip class: record Robot, zip(), zip() with combinator (.map()); PubUtil util with createLabelledFlux() to generate Flux that emits a number of strings labelled with given label and count
 - OperatorMerge: getFlightsDemo(); Flight record, AirCanada, Emirates, JAL classes with getFlights():Flux<Flight>; Priceline class to return merged Flux<Flight> and limit emission via take(Duration);
 - OperatorMerge: merge(), mergeWith(); modified Util to add addFluxLogger() for use in transform()
 - OperatorConcatWith: concatDelayError()
