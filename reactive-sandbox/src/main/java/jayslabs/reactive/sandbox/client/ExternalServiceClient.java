@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import jayslabs.reactive.sandbox.assignment.Order;
+import jayslabs.reactive.sandbox.assignment.Product;
 import jayslabs.reactive.sandbox.common.AbstractHttpClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -22,9 +23,12 @@ public class ExternalServiceClient extends AbstractHttpClient {
         .responseContent().asString().next();
     }
 
-    public Mono<String> getProduct(int productId){
-        return Mono.zip(getProductName05(productId), getPrice(productId), getReview(productId))
-            .map(tuple -> tuple.getT1() + "|" + tuple.getT2() + "|" + tuple.getT3());
+    public Mono<Product> getProduct(int productId){
+        return Mono.zip(
+            getProductName05(productId), 
+            getReview(productId), 
+            getPrice(productId))
+            .map(tuple -> new Product(tuple.getT1(), tuple.getT2(), tuple.getT3()));
     }
 
     private Mono<String> getProductName05(int productId){
