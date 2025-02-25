@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorMerge: merge(), mergeWith(); modified Util to add addFluxLogger() for use in transform()
 - OperatorConcatWith: concatDelayError()
 - OperatorConcatWith; used concatWith(), concat()
 - OperatorStartWith: added nameGeneratorWithCacheDemo() and modified NameGenrator to add method returning cache-enabled publisher to show publisher caching with startWith()
