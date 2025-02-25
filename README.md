@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorMerge: getFlightsDemo(); Flight record, AirCanada, Emirates, JAL classes with getFlights():Flux<Flight>; Priceline class to return merged Flux<Flight> and limit emission via take(Duration);
 - OperatorMerge: merge(), mergeWith(); modified Util to add addFluxLogger() for use in transform()
 - OperatorConcatWith: concatDelayError()
 - OperatorConcatWith; used concatWith(), concat()

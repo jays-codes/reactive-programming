@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import jayslabs.reactive.sandbox.common.Util;
+import jayslabs.reactive.sandbox.helper.Priceline;
 import reactor.core.publisher.Flux;
 
 /**
@@ -17,7 +18,16 @@ public class OperatorMerge {
 
     public static void main(String[] args) {
        //demo1();
-        demo2();
+        //demo2();
+
+        getFlightsDemo();
+    }
+
+    private static void getFlightsDemo(){
+        Priceline.getFlights()
+        .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(10);
     }
 
     /**
