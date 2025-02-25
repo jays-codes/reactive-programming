@@ -12,6 +12,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public class ExternalServiceClient extends AbstractHttpClient {
+    //record Product(String name, String price, String review){}
+    
     private static final Logger log = LoggerFactory.getLogger(ExternalServiceClient.class);
     public Mono<String> getProductName(int productId){
         return this.httpClient.get()
@@ -20,11 +22,37 @@ public class ExternalServiceClient extends AbstractHttpClient {
         .responseContent().asString().next();
     }
 
+    public Mono<String> getProduct(int productId){
+        return Mono.zip(getProductName05(productId), getPrice(productId), getReview(productId))
+            .map(tuple -> tuple.getT1() + "|" + tuple.getT2() + "|" + tuple.getT3());
+    }
+
+    private Mono<String> getProductName05(int productId){
+        return this.httpClient.get()
+            .uri("/demo05/product/" + productId)
+            .responseContent().asString().next();
+    }
+
+    private Mono<String> getPrice(int productId){
+        return this.httpClient.get()
+            .uri("/demo05/price/" + productId)
+            .responseContent().asString().next();
+    }
+
+    private Mono<String> getReview(int productId){
+        return this.httpClient.get()
+            .uri("/demo05/review/" + productId)
+            .responseContent().asString().next();
+    }
+
+
     public Flux<String> getNames(){
         return this.httpClient.get()
             .uri("/demo02/name/stream")
             .responseContent().asString();
     }
+
+
 
     //return Flux<Integer> from getStockPrice API
     public Flux<Integer> getStockPrice(){
