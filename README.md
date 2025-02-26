@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorFlatMapFlux: from Flux<User> get Flux<Order> for all User via flatMap(OrderService::getUserOrders); added fluxLogger to OrderService via transform()
 - OperatorFlatMapMany: used flatMapMany() mono to flux
 - OperatorFlatMapMono to use mock Microservices, used flatMap() against Mono<Integer> return from a call to UserService, and call to getUserBalance(), returning a Mono<Integer> 
 - created Microservice simulation for flatMap() demo: records - Order, User; classes - UserService, OrderService, PaymentService
