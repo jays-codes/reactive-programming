@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- created Microservice simulation for flatMap() demo: records - Order, User; classes - UserService, OrderService, PaymentService
 - Assignment136 ver.2; made product into a record;
 - Assignment136 ver.1; modified ExternalServiceClient added method for new endpoint (get product/price/review)
 - OperatorZip class: record Robot, zip(), zip() with combinator (.map()); PubUtil util with createLabelledFlux() to generate Flux that emits a number of strings labelled with given label and count

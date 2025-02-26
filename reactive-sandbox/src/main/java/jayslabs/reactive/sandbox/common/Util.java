@@ -59,8 +59,14 @@ public class Util {
         var mono = Mono.just(3);
         mono.subscribe(subscriber("subscriber1"));
         mono.subscribe(subscriber("subscriber2"));
+    }
 
+    public static String getProductName(){
+        return faker().commerce().productName();
+    }
 
+    public static int nextInt(int max){
+        return faker().random().nextInt(max);
     }
 }
 
