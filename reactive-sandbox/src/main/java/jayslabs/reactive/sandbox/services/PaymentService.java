@@ -18,7 +18,7 @@ public class PaymentService {
         3, 200
     );
 
-    public Mono<Integer> getUserBalance(Integer userId){
+    public static Mono<Integer> getUserBalance(Integer userId){
         //return Mono.just(balanceTable.get(userId));
 
         //because we want side effect to happen at subscription time

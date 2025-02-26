@@ -25,12 +25,12 @@ public class UserService {
      * 2.) map()
      * @return
      */
-    public Flux<User> getAllUsers(){
+    public static Flux<User> getAllUsers(){
         return Flux.fromIterable(userTable.keySet())
             .map(entry -> new User(userTable.get(entry), entry));
     }
 
-    public Mono<Integer> getUserId(String name){
+    public static Mono<Integer> getUserId(String name){
         //return Mono.justOrEmpty(userTable.get(name));
         
         //because we want side effect to happen at subscription time
