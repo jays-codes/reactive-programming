@@ -14,15 +14,21 @@ public class OperatorFlatMapFlux {
         //get all users via UserService and with the ids, get all orders from OrderService
 
         //option 1
-        UserService.getAllUsers()
-        .map(User::id)
-        .flatMap(OrderService::getUserOrders)
-        .subscribe(Util.subscriber());
+        // UserService.getAllUsers()
+        // .map(User::id)
+        // .flatMap(OrderService::getUserOrders)
+        // .subscribe(Util.subscriber());
 
         //option 2
         // UserService.getAllUsers()
         // .flatMap(user -> OrderService.getUserOrders(user.id()))
         // .subscribe(Util.subscriber());
+
+        //option 3 - used concurrency val
+        UserService.getAllUsers()
+        .map(User::id)
+        .flatMap(OrderService::getUserOrders, 1)
+        .subscribe(Util.subscriber());
 
         Util.sleepSeconds(5);
     }
