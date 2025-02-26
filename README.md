@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Assignment142: modified Assignment136 to use Flux<Integer> instead of a for-loop, and use flatMap()
 - OperatorFlatMapFlux: added version setting concurrency val for flatMap()
 - OperatorFlatMapFlux: from Flux<User> get Flux<Order> for all User via flatMap(OrderService::getUserOrders); added fluxLogger to OrderService via transform()
 - OperatorFlatMapMany: used flatMapMany() mono to flux
