@@ -25,5 +25,6 @@ public class OperatorFlatMapMono {
         
         .flatMap(id -> PaymentService.getUserBalance(id))
         .subscribe(Util.subscriber());
+
     }   
 }

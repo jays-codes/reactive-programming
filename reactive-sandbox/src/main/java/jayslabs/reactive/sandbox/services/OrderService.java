@@ -32,9 +32,9 @@ public class OrderService {
         4, List.of()
     );
 
-    public Flux<Order> getUserOrders(Integer userId){
+    public static Flux<Order> getUserOrders(Integer userId){
         return Flux.fromIterable(orderTable.get(userId))
-            .delayElements(Duration.ofMillis(500))
-            .log();
+            .delayElements(Duration.ofMillis(500));
+            //.log();
     }
 }
