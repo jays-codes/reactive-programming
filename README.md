@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Assignment146: create a Flux of UserInformation records, aggregating user/balance/orders into a UserInformation record, for all users. Used Flux.flatMap(), Mono.zip(), Mono.map(), Flux.collectList(). two solutions  
 - OperatorThen: then(), sendNotification() to show routing
 - OperatorCollectList : collectList()
 - OperatorConcatMap : concatMap()
