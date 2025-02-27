@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorThen: then(), sendNotification() to show routing
 - OperatorCollectList : collectList()
 - OperatorConcatMap : concatMap()
 - Assignment142: modified Assignment136 to use Flux<Integer> instead of a for-loop, and use flatMap()
