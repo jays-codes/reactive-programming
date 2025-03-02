@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Assignment150Solution2 class: solution #2 - generates revenue report on batch of BookOrders emitted - 3-second batches. no revenueMap maintained.
 - Assignment150 class: solution #1 - stream BookOrders, separate flux emitting every 3 seconds, passing immutable copy of revenueMap
 - OperatorBuffer class: buffer(), Flux.never(), bufferTime()
 - Assignment146: create a Flux of UserInformation records, aggregating user/balance/orders into a UserInformation record, for all users. Used Flux.flatMap(), Mono.zip(), Mono.map(), Flux.collectList(). two solutions  
