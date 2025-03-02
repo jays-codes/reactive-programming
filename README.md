@@ -3,6 +3,8 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorWindow class: window(), processEvents(Flux<String>):Mono<Void> 
+to process each flux window created
 - Assignment150Solution2 class: solution #2 - generates revenue report on batch of BookOrders emitted - 3-second batches. no revenueMap maintained.
 - Assignment150 class: solution #1 - stream BookOrders, separate flux emitting every 3 seconds, passing immutable copy of revenueMap
 - OperatorBuffer class: buffer(), Flux.never(), bufferTime()
