@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Assignment154 class: solution 1 - modify processEvents() to contain logic for writing window processing result to a file (1 window:1 file)
 - OperatorWindow class: window(), processEvents(Flux<String>):Mono<Void> 
 to process each flux window created
 - Assignment150Solution2 class: solution #2 - generates revenue report on batch of BookOrders emitted - 3-second batches. no revenueMap maintained.
