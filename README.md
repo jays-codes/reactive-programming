@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorGroupBy class: groupBy():GroupFlux<String, Integer> demoed processing of GroupFlux<String, Integer> using flatMap(), doOnNext(), doOnComplete(), then():Mono<Void>
 - Assignment154Solution2 class: solution 2 - create EventLoggerUtil to separate filehandling and window processing. Appropriate file handling methods called on doOnNext(), doFirst(), doFinally() used AtomicInteger to increment filename
 - Assignment154 class: solution 1 - modify processEvents() to contain logic for writing window processing result to a file (1 window:1 file)
 - OperatorWindow class: window(), processEvents(Flux<String>):Mono<Void> 
