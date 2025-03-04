@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Assignment157GroupBy - [TEMPLATE QUALITY] answer for #157 assignment; GroupFlux processing via separate Service class; service maintains state via PO_PROCESSOR map Map<String, UnaryOperator<Flux<PurchaseOrder>>> (Category, methodInvocation)
 - OperatorGroupBy class: groupBy():GroupFlux<String, Integer> demoed processing of GroupFlux<String, Integer> using flatMap(), doOnNext(), doOnComplete(), then():Mono<Void>
 - Assignment154Solution2 class: solution 2 - create EventLoggerUtil to separate filehandling and window processing. Appropriate file handling methods called on doOnNext(), doFirst(), doFinally() used AtomicInteger to increment filename
 - Assignment154 class: solution 1 - modify processEvents() to contain logic for writing window processing result to a file (1 window:1 file)
@@ -73,7 +74,7 @@ to process each flux window created
 - created FluxJust class: Flux, just(); subscribe()
 - created FileServiceImpl to apply reactive principles to a non-reactive code base; FileServiceImpl2 is a refactored version of FileServiceImpl
 - tested block() for synchronous execution
-- created WILD demo on writing non-blocking IO running external service client, and calling a "resource intensive" method (takes at least 1 second to execute) 100 times in a loop.
+- [TEMPLATE QUALITY] created WILD demo on writing non-blocking IO running external service client, and calling a "resource intensive" method (takes at least 1 second to execute) 100 times in a loop.
 - created AbstractHttpClient - template for reactive http client: HttpClient, LoopResources; created ExternalServiceClient using AbstractHttpClient, getProductName() that return a Mono<String>
 - create dockerfile to use vinoth's external-services service; created image and ran container (7070)
 - created MonoDefer, createPublisher(), demoed Mono.defer()
