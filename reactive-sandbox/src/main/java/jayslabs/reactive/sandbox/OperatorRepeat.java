@@ -1,5 +1,8 @@
 package jayslabs.reactive.sandbox;
 
+import java.time.Duration;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,11 +17,35 @@ public class OperatorRepeat {
     
     public static void main(String[] args) {
         //repeatSolution1();
-        generateMonoCountry()
-        .repeat(10)
-        .subscribe(Util.subscriber());
+        //repeatTakeUntil();
+        //repeatPredicate();
+        repeatWhenDelay();
 
         Util.sleepSeconds(10);
+    }
+
+    public static void repeatWhenDelay(){
+        generateMonoCountry()
+        .repeatWhen(rSignal -> 
+            rSignal.delayElements(Duration.ofSeconds(2))
+            
+            ).take(2)
+        .subscribe(Util.subscriber());
+    }
+
+    public static void repeatPredicate(){
+        AtomicInteger atomicInt = new AtomicInteger(0);
+        generateMonoCountry()
+        .repeat(() -> atomicInt.getAndIncrement() < 10)
+        .subscribe(Util.subscriber());
+    }
+
+    public static void repeatTakeUntil(){
+        generateMonoCountry()
+        .repeat()
+        .takeUntil(country -> country.equals("Canada"))
+        .subscribe(Util.subscriber());
+
     }
 
     public static void repeatSolution1(){

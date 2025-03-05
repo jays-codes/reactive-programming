@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorRepeat : added use of repeat with predicate, repeatWhen(function)
 - OperatorRepeat : repeat()
 - Assignment157GroupBy - [TEMPLATE QUALITY] answer for #157 assignment; GroupFlux processing via separate Service class; service maintains state via PO_PROCESSOR map Map<String, UnaryOperator<Flux<PurchaseOrder>>> (Category, methodInvocation)
 - OperatorGroupBy class: groupBy():GroupFlux<String, Integer> demoed processing of GroupFlux<String, Integer> using flatMap(), doOnNext(), doOnComplete(), then():Mono<Void>
