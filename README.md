@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorRetry : retry(n), retry(predicate), retryWhen(Retry), Retry : indefinitely(), max(n), fixedDelay(n, Duration), doBeforeRetry(), filter(predicate), onRetryExhaustedThrow(), signal.failure()
 - OperatorRepeat : added use of repeat with predicate, repeatWhen(function)
 - OperatorRepeat : repeat()
 - Assignment157GroupBy - [TEMPLATE QUALITY] answer for #157 assignment; GroupFlux processing via separate Service class; service maintains state via PO_PROCESSOR map Map<String, UnaryOperator<Flux<PurchaseOrder>>> (Category, methodInvocation)
