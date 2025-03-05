@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- OperatorRepeat : repeat()
 - Assignment157GroupBy - [TEMPLATE QUALITY] answer for #157 assignment; GroupFlux processing via separate Service class; service maintains state via PO_PROCESSOR map Map<String, UnaryOperator<Flux<PurchaseOrder>>> (Category, methodInvocation)
 - OperatorGroupBy class: groupBy():GroupFlux<String, Integer> demoed processing of GroupFlux<String, Integer> using flatMap(), doOnNext(), doOnComplete(), then():Mono<Void>
 - Assignment154Solution2 class: solution 2 - create EventLoggerUtil to separate filehandling and window processing. Appropriate file handling methods called on doOnNext(), doFirst(), doFinally() used AtomicInteger to increment filename
