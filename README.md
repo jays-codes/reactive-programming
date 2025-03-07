@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Assignment164RepeatRetry, ExternalServiceClient06 classes: modfied ESC to add use for new endpoints, demo repeat() with takeUntil(), retry() and filter() on custom exceptions
 - OperatorRetry : retry(n), retry(predicate), retryWhen(Retry), Retry : indefinitely(), max(n), fixedDelay(n, Duration), doBeforeRetry(), filter(predicate), onRetryExhaustedThrow(), signal.failure()
 - OperatorRepeat : added use of repeat with predicate, repeatWhen(function)
 - OperatorRepeat : repeat()

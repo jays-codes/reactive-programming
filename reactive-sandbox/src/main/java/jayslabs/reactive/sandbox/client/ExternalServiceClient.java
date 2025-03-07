@@ -23,6 +23,13 @@ public class ExternalServiceClient extends AbstractHttpClient {
         .responseContent().asString().next();
     }
 
+
+    public Mono<String> getCountry(){
+        return this.httpClient.get()
+            .uri("/demo06/country")
+            .responseContent().asString().next();
+    }
+
     public Mono<Product> getProduct(int productId){
         return Mono.zip(
             getProductName05(productId), 
@@ -34,6 +41,12 @@ public class ExternalServiceClient extends AbstractHttpClient {
     private Mono<String> getProductName05(int productId){
         return this.httpClient.get()
             .uri("/demo05/product/" + productId)
+            .responseContent().asString().next();
+    }
+
+    public Mono<String> getProductName06(int productId){
+        return this.httpClient.get()
+            .uri("/demo06/product/" + productId)
             .responseContent().asString().next();
     }
 
