@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import jayslabs.reactive.sandbox.client.ExternalServiceClient06;
 import jayslabs.reactive.sandbox.client.ServerError;
 import jayslabs.reactive.sandbox.common.Util;
+import reactor.core.publisher.Flux;
 import reactor.util.retry.Retry;
 
 public class Assignment164RepeatRetry {
@@ -16,7 +17,17 @@ public class Assignment164RepeatRetry {
 
     public static void main(String[] args) {
         //repeatExternalClientCall();
-        retryExternalClientCall();
+        //retryExternalClientCall();
+        test2();
+    }
+
+    public static void test2(){
+        Flux.just("a")
+        .repeat(1)
+        .repeat(2)
+        .subscribe(Util.subscriber());
+    
+        Util.sleepSeconds(10);
     }
 
     //retry when the server error occurs
