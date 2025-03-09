@@ -17,6 +17,7 @@ public class FluxSinkThreadSafety {
     private static final Logger log = LoggerFactory.getLogger(FluxSinkThreadSafety.class);
 
     public static void main(String[] args) {
+        //demo1();
         demo2();
     }
 
