@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- SinkManyMulticast class: multicast(); added late subscribers; demoed warmup behavior
 - SinkThreads class: try behavior of tryEmitNext() vs emitNext() on Asynch emit of 1000 items added to list. Used CompletableFuture, runAsynch()
 - SinkManyUnicast class: Sinks.many(), unicast(), onBackPressureBuffer(), asFlux()
 - SinkOne: emitValue(), define EmitFailureHandler
