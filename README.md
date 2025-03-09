@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- SinkManyReplay class : Sinks.many().replay()
 - SinkManyMulticastDirectAllOrNothing : directAllOrNothing()
 - SinkManyMulticastDirectBestEffort class; demo with varying slowness bet subscribers; multicast().directBestEffort(); used with flux.onBackPressureBuffer()
 - SinkManyMulticast class: multicast(); added late subscribers; demoed warmup behavior
