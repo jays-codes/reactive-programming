@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- SinkThreads class: try behavior of tryEmitNext() vs emitNext() on Asynch emit of 1000 items added to list. Used CompletableFuture, runAsynch()
 - SinkManyUnicast class: Sinks.many(), unicast(), onBackPressureBuffer(), asFlux()
 - SinkOne: emitValue(), define EmitFailureHandler
 - package reactive.sandbox.sinks; SinkOne class: Sinks.one(), asMono(), tryEmitValue(), tryEmitEmpty(), tryEmitError()
