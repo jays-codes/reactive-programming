@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- SinkManyUnicast class: Sinks.many(), unicast(), onBackPressureBuffer(), asFlux()
 - SinkOne: emitValue(), define EmitFailureHandler
 - package reactive.sandbox.sinks; SinkOne class: Sinks.one(), asMono(), tryEmitValue(), tryEmitEmpty(), tryEmitError()
 - Assignment164RepeatRetry, ExternalServiceClient06 classes: modfied ESC to add use for new endpoints, demo repeat() with takeUntil(), retry() and filter() on custom exceptions
