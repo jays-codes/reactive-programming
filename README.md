@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Assignment176SinksSolution2 class: updated solution for Sinks Chatroom Assignment 
 - Assignment176Sinks class: Assignment on sinks; chatroom:record SlackRoom with 3 members/subs <SlackUser> - late subs, used Sinks.many().replay().all()
 - SinkManyReplay class : Sinks.many().replay()
 - SinkManyMulticastDirectAllOrNothing : directAllOrNothing()
