@@ -68,7 +68,6 @@ class ChannelRoom {
 
         //user sets msgConsumer to emit messages to the sink
         member.setMsgConsumer(msg -> send(member.getName(), msg));
-
     }
 
     public void send(String sender, String msg){
