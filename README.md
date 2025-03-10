@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- crud ops on Context; Context.of(k,v), put(k,v), empty(), delete(k), get(k)
 - Context class; uc: emit from pub based on context key; used Mono.deferContextual(function), ctx.hasKey(), ctx.get(), ctx.put, mono.contextWrite(function)
 - Assignment176SinksSolution2 class [TEMPLATE QUALITY]: updated solution for Sinks Chatroom Assignment 
 - Assignment176Sinks class: Assignment on sinks; chatroom:record SlackRoom with 3 members/subs <SlackUser> - late subs, used Sinks.many().replay().all()
