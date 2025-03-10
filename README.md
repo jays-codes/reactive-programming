@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Assignment176Sinks class: Assignment on sinks; chatroom:record SlackRoom with 3 members/subs <SlackUser> - late subs, used Sinks.many().replay().all()
 - SinkManyReplay class : Sinks.many().replay()
 - SinkManyMulticastDirectAllOrNothing : directAllOrNothing()
 - SinkManyMulticastDirectBestEffort class; demo with varying slowness bet subscribers; multicast().directBestEffort(); used with flux.onBackPressureBuffer()
