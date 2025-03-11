@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- ContextPropagation class; demo propagation to upstream publishers, targetted propagation
 - crud ops on Context; Context.of(k,v), put(k,v), empty(), delete(k), get(k)
 - Context class; uc: emit from pub based on context key; used Mono.deferContextual(function), ctx.hasKey(), ctx.get(), ctx.put, mono.contextWrite(function)
 - Assignment176SinksSolution2 class [TEMPLATE QUALITY]: updated solution for Sinks Chatroom Assignment 
