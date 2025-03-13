@@ -1,14 +1,16 @@
 package jayslabs.reactive.sandbox.context;
 
+import java.time.Duration;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Map;   
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import jayslabs.reactive.sandbox.client.ExternalServiceClient07;
 import jayslabs.reactive.sandbox.common.Util;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public class ContextRateLimiter {
@@ -18,8 +20,17 @@ public class ContextRateLimiter {
         Collections.synchronizedMap(new HashMap<>());
 
     static {
-        categoryAttempts.put("standard", 2);
-        categoryAttempts.put("premium", 3);
+        refreshCategoryAttempts();
+    }
+
+    //refreshes the categoryAttempts map every 5 seconds
+    private static void refreshCategoryAttempts(){
+        Flux.interval(Duration.ofSeconds(5))
+        .startWith(0L)
+        .subscribe(i -> {
+            categoryAttempts.put("standard", 2);
+            categoryAttempts.put("premium", 3);
+        });
     }
 
     static <T> Mono<T> limitCalls(){
@@ -51,13 +62,14 @@ public class ContextRateLimiter {
         //rate limiter limit to 2 calls per 5 seconds for regular user, 
         //3 calls per 5 seconds for premium user. Use a context
 
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 25; i++){
             client.getBookFlux()
             .startWith(ContextRateLimiter.limitCalls())
             .contextWrite(ContextUserService.userCategoryContext())
             .next()
-            .contextWrite(ctx -> ctx.put("user", "yor"))
+            .contextWrite(ctx -> ctx.put("user", "becky"))
             .subscribe(Util.subscriber());
+            Util.sleepSeconds(1);
         }
 
         
@@ -75,7 +87,7 @@ public class ContextRateLimiter {
         // .subscribe(Util.subscriber());
 
 
-        Util.sleepSeconds(5);
+        Util.sleepSeconds(1);
     }
 
 

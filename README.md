@@ -3,7 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
-- [Template Quality] ContextUserService, ContextRateLimiter, ExternalServiceClient07; Limits call to a service via varying category; added main() to apply Rate limiter based on context
+- [Template Quality] ContextUserService, ContextRateLimiter, ExternalServiceClient07; Limits call to a service via varying category; added main() to apply Rate limiter based on context; enabled reset every 5 seconds - refreshCategoryAttempts()
 - ContextPropagation class; demo propagation to upstream publishers, targetted propagation
 - crud ops on Context; Context.of(k,v), put(k,v), empty(), delete(k), get(k)
 - Context class; uc: emit from pub based on context key; used Mono.deferContextual(function), ctx.hasKey(), ctx.get(), ctx.put, mono.contextWrite(function)
