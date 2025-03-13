@@ -16,15 +16,16 @@ public class ExternalServiceClient07 extends AbstractHttpClient {
 
 
     public Mono<String> getBook(){
-        return get("/demo07/book");
+        return getBookFlux()
+            .next();
     }
 
 
-    private Mono<String> get(String path){
+    public Flux<String> getBookFlux(){
         return this.httpClient.get()
-            .uri(path)
-            .response(this::toResponse)
-            .next();
+            .uri("/demo07/book")
+            .responseContent()
+            .asString();
     }
 
     private Flux<String> toResponse(HttpClientResponse response, ByteBufFlux body){

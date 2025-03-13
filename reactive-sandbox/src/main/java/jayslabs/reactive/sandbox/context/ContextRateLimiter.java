@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 
 import jayslabs.reactive.sandbox.client.ExternalServiceClient07;
 import jayslabs.reactive.sandbox.common.Util;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public class ContextRateLimiter {
@@ -52,18 +51,28 @@ public class ContextRateLimiter {
         //rate limiter limit to 2 calls per 5 seconds for regular user, 
         //3 calls per 5 seconds for premium user. Use a context
 
-        var flux = Flux.range(1, 10)
-        .doOnNext(i -> log.info("processing item: {}", i))
-        .flatMap(i -> client.getBook());
+        for (int i = 0; i < 10; i++){
+            client.getBookFlux()
+            .startWith(ContextRateLimiter.limitCalls())
+            .contextWrite(ContextUserService.userCategoryContext())
+            .next()
+            .contextWrite(ctx -> ctx.put("user", "yor"))
+            .subscribe(Util.subscriber());
+        }
+
+        
+        // var flux = Flux.range(1, 10)
+        // .doOnNext(i -> log.info("processing item: {}", i))
+        // .flatMap(i -> client.getBook());
 
 
-        flux.contextWrite(ctx -> {
-            if (ctx.get("user").equals("premium")){
-                return ctx.put("calls", 3);
-            }
-            return ctx.put("calls", 2);
-        })
-        .subscribe(Util.subscriber());
+        // flux.contextWrite(ctx -> {
+        //     if (ctx.get("user").equals("premium")){
+        //         return ctx.put("calls", 3);
+        //     }
+        //     return ctx.put("calls", 2);
+        // })
+        // .subscribe(Util.subscriber());
 
 
         Util.sleepSeconds(5);

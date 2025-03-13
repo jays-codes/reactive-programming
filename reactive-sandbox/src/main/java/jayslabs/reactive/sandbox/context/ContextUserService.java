@@ -22,6 +22,6 @@ public class ContextUserService {
             .filter(USR_CAT::containsKey)
             .map(USR_CAT::get)
             .map(category -> ctx.put("category", category))
-            .orElse(ctx);
+            .orElse(Context.empty());
     }
 }
