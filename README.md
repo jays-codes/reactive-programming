@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- FluxRangeTest; expectNextCount(), expectNextMatches(predicate)
 - FluxTest; thenCancel(), verifyComplete(), verifyError()
 - MonoEmptyErrorTest: expectError(), expectErrorMessage(), consumeErrorWith()
 - MonoTest test class; used StepVerifier to test service returning Mono<String>; create(), expectNext(), expectConplete(), verify()
