@@ -34,7 +34,13 @@ public class FluxRangeTest {
         .thenCancel()
         .verify();
         //.verifyComplete();
+    }
 
-
+    @Test
+    public void testThenConsumeWhileFlux(){
+        StepVerifier.create(getProducts())
+        //.expectNextCount(30)
+        .thenConsumeWhile(prdct -> prdct.startsWith("product-"))
+        .verifyComplete();
     }
 }

@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- FluxRangeTest; thenConsumeWhile()
 - FluxRangeTest; expectNextCount(), expectNextMatches(predicate)
 - FluxTest; thenCancel(), verifyComplete(), verifyError()
 - MonoEmptyErrorTest: expectError(), expectErrorMessage(), consumeErrorWith()
