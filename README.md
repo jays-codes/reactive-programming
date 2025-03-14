@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- MonoTest test class; used StepVerifier to test service returning Mono<String>; create(), expectNext(), expectConplete(), verify()
 - [Template Quality] ContextUserService, ContextRateLimiter, ExternalServiceClient07; Limits call to a service via varying category; added main() to apply Rate limiter based on context; enabled reset every 5 seconds - refreshCategoryAttempts()
 - ContextPropagation class; demo propagation to upstream publishers, targetted propagation
 - crud ops on Context; Context.of(k,v), put(k,v), empty(), delete(k), get(k)
