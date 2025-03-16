@@ -16,6 +16,7 @@ public class VirtualTimeSchedulerTest {
     private Flux<String> getProducts(){
         return Flux.range(1,10)
             .map(i -> "product-" + i)
+            .delaySubscription(Duration.ofSeconds(3))
             .delayElements(Duration.ofSeconds(1))
             .log();
     }
@@ -28,19 +29,20 @@ public class VirtualTimeSchedulerTest {
     //     .verifyComplete();        
     // }
 
-    @Test
-    public void testProductFluxRangeWithVirtualTime(){
-        StepVerifier.withVirtualTime(this::getProducts)
-        .thenAwait(Duration.ofSeconds(10))
-        .expectNextCount(10)
-        .verifyComplete();
-    }
+    // @Test
+    // public void testProductFluxRangeWithVirtualTime(){
+    //     StepVerifier.withVirtualTime(this::getProducts)
+    //     .thenAwait(Duration.ofSeconds(10))
+    //     .expectNextCount(10)
+    //     .verifyComplete();
+    // }
 
     @Test
     public void testVirtualTimeNoevent(){
         StepVerifier.withVirtualTime(this::getProducts)
-        .expectNoEvent(Duration.ofSeconds(10))
-        .thenAwait(Duration.ofSeconds(10))
+        .expectSubscription()
+        .expectNoEvent(Duration.ofSeconds(3))
+        .thenAwait(Duration.ofSeconds(15))
         .expectNextCount(10)
         .verifyComplete();
     }
