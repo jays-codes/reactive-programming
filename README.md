@@ -3,6 +3,8 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- VirtualTimeSchedulerTest; VirtualTestSchedule, withVirtualTime(supplier), 
+expectNoEvent()
 - AssertNextTest; assertNext(consumer), Assertions
 - FluxRangeTest; thenConsumeWhile()
 - FluxRangeTest; expectNextCount(), expectNextMatches(predicate)
