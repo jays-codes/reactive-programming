@@ -3,6 +3,8 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- ContextTest; SVO.create().withInitialContext(context)
+- TestScenarioName; StepVerifierOptions.create().scenarioName(), as()
 - VirtualTimeSchedulerTest; VirtualTestSchedule, withVirtualTime(supplier), 
 expectNoEvent()
 - AssertNextTest; assertNext(consumer), Assertions
