@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- Lec102DefaultThread; demo moving subscription to another thread via Runnable and Thread
 - TimeoutTest; demo verify(duration)
 - PublisherTest; TestPublisher().create()
 - ContextTest; SVO.create().withInitialContext(context)
