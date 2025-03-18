@@ -16,7 +16,7 @@ public class BackPressureStrategies {
 
 
         var publisher = Flux.create(sink -> {
-            for (int i = 1; i <= 150 && !sink.isCancelled(); i++) {
+            for (int i = 1; i <= 1500 && !sink.isCancelled(); i++) {
                 log.info("creating: {}", i);
                 sink.next(i);
                 Util.sleep(Duration.ofMillis(50));
@@ -27,7 +27,12 @@ public class BackPressureStrategies {
 
 
         publisher
-        .onBackpressureBuffer()
+
+        //buffer strategy
+        //.onBackpressureBuffer()
+
+        //error strategy
+        .onBackpressureError()
         .publishOn(Schedulers.boundedElastic())
         .map(BackPressureStrategies::slowTask)
         .subscribe();
