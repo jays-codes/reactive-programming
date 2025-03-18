@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- TimeoutTest; demo verify(duration)
 - PublisherTest; TestPublisher().create()
 - ContextTest; SVO.create().withInitialContext(context)
 - TestScenarioName; StepVerifierOptions.create().scenarioName(), as()
