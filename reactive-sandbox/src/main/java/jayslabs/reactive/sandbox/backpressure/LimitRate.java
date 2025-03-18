@@ -31,6 +31,12 @@ public class LimitRate {
         .map(LimitRate::slowTask)
         .subscribe(Util.subscriber("anya"));
         
+        publisher
+//        .limitRate(10)
+        .take(20)
+        .publishOn(Schedulers.boundedElastic())
+        .subscribe(Util.subscriber("becky"));
+
         Util.sleepSeconds(15);
     }
 
