@@ -16,13 +16,24 @@ public class ExternalServiceClient extends AbstractHttpClient {
     //record Product(String name, String price, String review){}
     
     private static final Logger log = LoggerFactory.getLogger(ExternalServiceClient.class);
+    
     public Mono<String> getProductName(int productId){
         return this.httpClient.get()
 
         .uri("/demo01/product/" + productId)
-        .responseContent().asString().next();
+        .responseContent().asString()
+        .next();
     }
 
+    public Mono<String> getProductNameAndLog(int productId){
+        return this.httpClient.get()
+
+        .uri("/demo01/product/" + productId)
+        .responseContent().asString()
+        .doOnNext(msg -> log.info("next: {}", msg))
+        .next();
+        //.publishOn(Schedulers.boundedElastic());
+    }
 
     public Mono<String> getCountry(){
         return this.httpClient.get()

@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- [TEMPLATE QUALITY] EventLoopIssueFix; demo offloading time-consuming downstream to appropriate scheduler using publishOn() both in provider and subscriber
 - PublishOn class; used multiple publishOn() 1 for parallel and 1 for boundedElastic(3 threads total)
 - VirtualThreads class: demo setting to active in reactor, use Thread.currentThread().isVirtual() to check if activated for scheduler
 - MultipleSubscribeOn : added code to use Schedulers.immediate()
