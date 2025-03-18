@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- MultipleSubscribeOn, Assignment99ver3 class; demo multiple Schedulers defined
 - SchedulerSubscribeOn class; used subscribeOn(), Schedulers.boundedElestic(), 
 implemented subscription via Runnable, ran via Thread.ofPlatform().start(runner) showing flow being delegate to Threadpool
 - Lec102DefaultThread; demo moving subscription to another thread via Runnable and Thread
@@ -18,7 +19,7 @@ expectNoEvent()
 - FluxTest; thenCancel(), verifyComplete(), verifyError()
 - MonoEmptyErrorTest: expectError(), expectErrorMessage(), consumeErrorWith()
 - MonoTest test class; used StepVerifier to test service returning Mono<String>; create(), expectNext(), expectConplete(), verify()
-- [Template Quality] ContextUserService, ContextRateLimiter, ExternalServiceClient07; Limits call to a service via varying category; added main() to apply Rate limiter based on context; enabled reset every 5 seconds - refreshCategoryAttempts()
+- [TEMPLATE QUALITY] ContextUserService, ContextRateLimiter, ExternalServiceClient07; Limits call to a service via varying category; added main() to apply Rate limiter based on context; enabled reset every 5 seconds - refreshCategoryAttempts()
 - ContextPropagation class; demo propagation to upstream publishers, targetted propagation
 - crud ops on Context; Context.of(k,v), put(k,v), empty(), delete(k), get(k)
 - Context class; uc: emit from pub based on context key; used Mono.deferContextual(function), ctx.hasKey(), ctx.get(), ctx.put, mono.contextWrite(function)
@@ -64,7 +65,7 @@ to process each flux window created
 - OperatorConcatWith; used concatWith(), concat()
 - OperatorStartWith: added nameGeneratorWithCacheDemo() and modified NameGenrator to add method returning cache-enabled publisher to show publisher caching with startWith()
 - OperatorStartWith: startWith(Publisher), startWith(T)
-- Assignment99ver2: iteration 2; modified ExternalServiceClient added singleton factory method to return Flux<Order> (Hot Publisher via publish().refCount()); Created OrderProcessor interface, Order record, Impls of OrderProcessor: RevenueService, InventoryService with map var, order processing (consume()) and emit (stream() - Cold Publisher) logic; cleaned up previous version and remove internal classes causing clashing dependencies
+- [TEMPLATE QUALITY] Assignment99ver2: iteration 2; modified ExternalServiceClient added singleton factory method to return Flux<Order> (Hot Publisher via publish().refCount()); Created OrderProcessor interface, Order record, Impls of OrderProcessor: RevenueService, InventoryService with map var, order processing (consume()) and emit (stream() - Cold Publisher) logic; cleaned up previous version and remove internal classes causing clashing dependencies
 - Assignment99: iteration 1 - Modified ExternalServiceClient: getOrderStream():Flux<String> to retrieve from orders endpoint; Created RevenueService and InventoryService to compute revenue and inventory; used Flux.create() to create revenue and inventory fluxes; used multiple subscribers to subscribe to the fluxes; used share() to create a hot publisher; used replay() to replay the flux to new subscribers
 - FluxCreateMultipleSubscribers: share() to create a hot publisher, enabling multiple subscribers to subscribe to a flux created via Flux.create(), passing in a Consumer<FluxSink<String>> (NameGenerator)
 - HotPublisherCache: replay(), used stockStream() to generate stock prices; used stockFlux to emit stock prices to multiple subscribers
