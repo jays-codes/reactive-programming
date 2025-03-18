@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- BackPressureHandling; Created a producer using Flux.generate() that continuously emits increasing numbers; Added a slow consumer that takes 1 second to process each item (timeConsumingTask); Used different schedulers to highlight the back pressure mechanism
 - ParallelExecution; enabled parallel execution of processing logic for a Flux; used Flux.parallel(), runOn(scheduler), Schedulers.parallel(), flux.sequential()
 - PublishOnSubscribeOn; demo combined use os subscribeOn() and publishOn() to control threading model in a sample reactive pipeline. subscribeOn() for data generation, publishOn() for offloading processing
 - [TEMPLATE QUALITY] EventLoopIssueFix; demo offloading time-consuming downstream to appropriate scheduler using publishOn() both in provider and subscriber
