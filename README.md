@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- VirtualThreads class: demo setting to active in reactor, use Thread.currentThread().isVirtual() to check if activated for scheduler
 - MultipleSubscribeOn : added code to use Schedulers.immediate()
 - MultipleSubscribeOn, Assignment99ver3 class; demo multiple Schedulers defined
 - SchedulerSubscribeOn class; used subscribeOn(), Schedulers.boundedElestic(), 
