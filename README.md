@@ -3,6 +3,8 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- SchedulerSubscribeOn class; used subscribeOn(), Schedulers.boundedElestic(), 
+implemented subscription via Runnable, ran via Thread.ofPlatform().start(runner) showing flow being delegate to Threadpool
 - Lec102DefaultThread; demo moving subscription to another thread via Runnable and Thread
 - TimeoutTest; demo verify(duration)
 - PublisherTest; TestPublisher().create()
