@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- LimitRate; similar to BackPressureHandling: Added limitRate(5) to the flux pipeline, The producer now only generates 5 items at a time, then waits. As items are consumed, the producer resumes to maintain at most 5 pending items.
 - BackPressureHandling; Created a producer using Flux.generate() that continuously emits increasing numbers; Added a slow consumer that takes 1 second to process each item (timeConsumingTask); Used different schedulers to highlight the back pressure mechanism
 - ParallelExecution; enabled parallel execution of processing logic for a Flux; used Flux.parallel(), runOn(scheduler), Schedulers.parallel(), flux.sequential()
 - PublishOnSubscribeOn; demo combined use os subscribeOn() and publishOn() to control threading model in a sample reactive pipeline. subscribeOn() for data generation, publishOn() for offloading processing
