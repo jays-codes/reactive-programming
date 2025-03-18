@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- BackPressureStrategies; demo buffer strategy using onBackPressureBuffer()
 - FluxCreateBackPressureProblem; demo issue with backpressure for Flux.create()
 - LimitRate; one producer and two different subscribers: Subscriber 1: Slow consumer with limitRate(1) (processes one item at a time), Subscriber 2: Fast consumer without rate limiting (processes items as fast as possible)
 - LimitRate; similar to BackPressureHandling: Added limitRate(5) to the flux pipeline, The producer now only generates 5 items at a time, then waits. As items are consumed, the producer resumes to maintain at most 5 pending items.
