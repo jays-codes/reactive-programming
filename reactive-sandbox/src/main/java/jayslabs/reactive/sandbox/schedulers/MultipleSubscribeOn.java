@@ -19,7 +19,11 @@ public class MultipleSubscribeOn {
             }
             sink.complete();
         })
-        .subscribeOn(Schedulers.newParallel("prll-schdlr"))
+        //.subscribeOn(Schedulers.newParallel("prll-schdlr"))
+
+        //demo immediate scheduler
+        .subscribeOn(Schedulers.immediate())
+        
         .doOnNext(i -> log.info("onNext: {}", i))
         .doFirst(() -> log.info("doFirst1"))
         .subscribeOn(Schedulers.boundedElastic())

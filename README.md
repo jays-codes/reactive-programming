@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- MultipleSubscribeOn : added code to use Schedulers.immediate()
 - MultipleSubscribeOn, Assignment99ver3 class; demo multiple Schedulers defined
 - SchedulerSubscribeOn class; used subscribeOn(), Schedulers.boundedElestic(), 
 implemented subscription via Runnable, ran via Thread.ofPlatform().start(runner) showing flow being delegate to Threadpool
