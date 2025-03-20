@@ -1,6 +1,8 @@
 # reactive-programming
 Jay's proj repo for Reactive Programming in Java
 
+#### [handwritten notes](https://github.com/user-attachments/files/19359836/java.reactive.programming.notes-2025-03-20-02-02.pdf)
+
 proj: reactive-sandbox
 - BackPressureStrategiesLatest; same as in drop, but only retains most recent emitted item for downstream, drops previous. onBackPressureLatest()
 - BackPressureStrategiesDrop; fast pub emits an item every 50 millis, map() calls slowTask() to process each item at a rate of 1 item/sec. map() execution is via scheduler. onBackPressureDrop() drops emitted items not processed
