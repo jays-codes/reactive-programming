@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import jayslabs.reactive.sandbox.common.Util;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.FluxSink;
 import reactor.core.scheduler.Schedulers;
 
 public class BackPressureStrategiesLatest {
@@ -23,12 +24,12 @@ public class BackPressureStrategiesLatest {
                 Util.sleep(Duration.ofMillis(10));
             }
             sink.complete();
-        }).cast(Integer.class)
+        }, FluxSink.OverflowStrategy.LATEST).cast(Integer.class)
         .subscribeOn(Schedulers.parallel());
 
 
         publisher
-        .onBackpressureLatest()
+        //.onBackpressureLatest()
         .doOnDiscard(Integer.class, i -> log.warn("DROPPED: {}", i))
         //.log()
         .limitRate(1)
