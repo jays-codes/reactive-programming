@@ -8,9 +8,10 @@ import org.slf4j.LoggerFactory;
 import jayslabs.reactive.sandbox.common.Util;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
-public class BackPressureStrategiesDrop {
 
-    private static final Logger log = LoggerFactory.getLogger(BackPressureStrategiesDrop.class);
+public class BackPressureStrategiesLatest {
+
+    private static final Logger log = LoggerFactory.getLogger(BackPressureStrategiesLatest.class);
 
     public static void main(String[] args) {
 
@@ -19,7 +20,7 @@ public class BackPressureStrategiesDrop {
             for (int i = 1; i <= 1500 && !sink.isCancelled(); i++) {
                 log.info("creating: {}", i);
                 sink.next(i);
-                Util.sleep(Duration.ofMillis(50));
+                Util.sleep(Duration.ofMillis(10));
             }
             sink.complete();
         }).cast(Integer.class)
@@ -27,15 +28,24 @@ public class BackPressureStrategiesDrop {
 
 
         publisher
-        .onBackpressureDrop(i -> log.info("drop: {}", i))
-        // .onBackpressureDrop()
-        // .log()
+        .onBackpressureLatest()
+        .doOnDiscard(Integer.class, i -> log.warn("DROPPED: {}", i))
+        //.log()
         .limitRate(1)
         .publishOn(Schedulers.boundedElastic())
-        .map(BackPressureStrategiesDrop::slowTask)
-        .subscribe();
-        
 
+        .map(BackPressureStrategiesLatest::slowTask)
+        // .doOnNext(i -> {
+        //     log.info("Processing item: {}", i);
+        //         Util.sleepSeconds(1); // Ver
+        // })
+        .subscribe(
+            item -> log.info("Processed: {}", item),
+            error -> log.error("Error: {}", error.getMessage()),
+            () -> log.info("Stream completed")
+
+        );
+        
         Util.sleepSeconds(15);
     }
 
