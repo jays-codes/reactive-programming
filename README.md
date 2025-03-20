@@ -2,7 +2,7 @@
 Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
-
+- BackPressureStrategiesDrop; fast pub emits an item every 50 millis, map() calls slowTask() to process each item at a rate of 1 item/sec. map() execution is via scheduler. onBackPressureDrop() drops emitted items not processed
 - BackPressureStrategies; demo fixed buffer strategy using onBackPressureBuffer(int maxSize)
 - BackPressureStrategies; demo error strategy using onBackPressureError()
 - BackPressureStrategies; demo buffer strategy using onBackPressureBuffer()
