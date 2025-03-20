@@ -3,6 +3,7 @@ Jay's proj repo for Reactive Programming in Java
 
 proj: reactive-sandbox
 
+- BackPressureStrategies; demo fixed buffer strategy using onBackPressureBuffer(int maxSize)
 - BackPressureStrategies; demo error strategy using onBackPressureError()
 - BackPressureStrategies; demo buffer strategy using onBackPressureBuffer()
 - FluxCreateBackPressureProblem; demo issue with backpressure for Flux.create()

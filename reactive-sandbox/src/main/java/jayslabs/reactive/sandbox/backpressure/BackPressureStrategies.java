@@ -32,7 +32,10 @@ public class BackPressureStrategies {
         //.onBackpressureBuffer()
 
         //error strategy
-        .onBackpressureError()
+        //.onBackpressureError()
+        
+        //fixed size buffer
+        .onBackpressureBuffer(100)
         .publishOn(Schedulers.boundedElastic())
         .map(BackPressureStrategies::slowTask)
         .subscribe();
